@@ -1,0 +1,20 @@
+public class IPhone extends Phone implements Ringable{
+    public IPhone(String versionNumber, int batteryPercentage, String carrier, String ringTone){
+        super(versionNumber, batteryPercentage, carrier, ringTone);
+    }
+    @Override
+    public String ring() {
+        String ringer = getRingTone();
+        return ringer;
+    }
+
+    @Override
+    public String unlock(){
+        return "Unlocked via passcode.";
+    }
+
+    @Override
+    public void displayInfo(){
+        System.out.println("iPhone: " + getVersionNumber()+ " From: "+ getCarrier()+ " has "+ getBatteryPercentage()+ " percent battery left.");
+    }
+}
